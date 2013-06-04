@@ -17,6 +17,10 @@ public interface CsvGenProcessor {
 	 * Separator on CSV Error Logs
 	 */
 	public static final String SEP_LINE_ID = "|";
+
+	public static final String CSV_FILE_EXT = ".csv";
+	
+	public static final char CSV_OUT_SEPARATOR = '|';
 	
 	/**
 	 * Initializes the implementation class with Objects containing 

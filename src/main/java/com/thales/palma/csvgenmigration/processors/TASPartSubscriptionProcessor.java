@@ -8,22 +8,21 @@ import java.util.List;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 
+import com.thales.palma.csvgenmigration.beans.SuperTASBean;
+
 import au.com.bytecode.opencsv.CSVReader;
 import au.com.bytecode.opencsv.CSVWriter;
 
-import com.thales.palma.csvgenmigration.beans.SuperTASBean;
+public class TASPartSubscriptionProcessor extends AbstractCsvGenProcessor {
 
-public class TASPartConfProcessor extends AbstractCsvGenProcessor {
-
+	private static final String MDP_RELEASED_STATE = "MDP_RELEASED";
 	
-	private static final String RELEASED_STATE = "RELEASED";
-
 	@Override
-	public void processOneFile(File csvFile, CSVWriter loadActionWriter) throws FileNotFoundException {
+	public void processOneFile(File csvFile, CSVWriter loadActionWriter)
+			throws FileNotFoundException {
 		
-		System.out.println("Uses TASPartConfProcessor : Process -> " + csvFile.getName());
 		
-		 List<? extends SuperTASBean> tasBeanList = null;
+		List<? extends SuperTASBean> tasBeanList = null;
 		
 		 CSVReader reader = new CSVReader(new FileReader(csvFile), '|', '\"', 1);
 		 
@@ -37,7 +36,7 @@ public class TASPartConfProcessor extends AbstractCsvGenProcessor {
 			 tasBeanList = obtainItemTASBeans(reader);
 		 }
 		 
-            
+           
 		 /* Proceed with the list lines */
 		 if(CollectionUtils.isNotEmpty(tasBeanList)) {
 			 
@@ -45,22 +44,18 @@ public class TASPartConfProcessor extends AbstractCsvGenProcessor {
 			 
 			 
 		 }
-            
-		 	
+
 	}
 
 	
-	/**
-	 * 
-	 * @param tasBeanList
-	 */
-	protected void printCsvFile(List<? extends SuperTASBean> tasBeanList, CSVWriter loadActionWriter) {
-		 
-			
-		/* Proceed with all the lines that match the condition (state RELEASED) */
+	@Override
+	protected void printCsvFile(List<? extends SuperTASBean> tasBeanList,
+			CSVWriter loadActionWriter) {
+
+		/* Proceed with all the lines that match the condition (state MDP_RELEASED) */
 		for(SuperTASBean tasBean : tasBeanList) {
 	        
-			 if(RELEASED_STATE.equals( tasBean.get_95lifeCycleState())) {
+			 if(MDP_RELEASED_STATE.equals( tasBean.get_95lifeCycleState())) {
 				 
 				 StringBuilder entriesStr = new StringBuilder( getCsvLoadAction() );
 				 entriesStr.append(ENTRIES_SEP_STR);
@@ -77,8 +72,7 @@ public class TASPartConfProcessor extends AbstractCsvGenProcessor {
 			 }
 	        	
 	      }
-			
+		
 	}
-	
-	
+
 }

@@ -205,13 +205,22 @@ public class CsvGenMigrationAction {
 			/* Initialize Action (Singleton) Object */
 			mAction.setProperties(csvGenProperties);
 			mAction.setLogsCsvGenMigrationLogger(csvOutputFolder);
-					
+			
+			/**
+			 * Obtain CSV Suffix for the current output CSV file
+			 */
+			String outCsvSuffix = csvGenProperties.getProperty("csv_gen_migration." + csvGenAction + ".output_file_suffix","");
+			
 			/**
 			 * Create a new context for each Processor
 			 */
 			Context context = new ContextBase();
 			
 			context.set(Context.CSV_INPUT_FILES_KEY,csvFiles);
+			context.set(Context.CSV_ACTION_KEY,csvGenAction);
+			context.set(Context.CSV_OUTPUT_FILE_SUFFIX_KEY,outCsvSuffix);
+			context.set(Context.CSV_OUTPUT_DIR_KEY, csvsOutputDir);
+			
 			
 			/* Launch the corresponding Processor */
 			mAction.launchProcessor(csvGenAction,context);
@@ -225,7 +234,6 @@ public class CsvGenMigrationAction {
 			e.printStackTrace();
 		}
 		
-
 	}
 
 
