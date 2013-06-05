@@ -61,9 +61,10 @@ public class TASPartSubscriptionProcessor extends AbstractCsvGenProcessor {
 				 entriesStr.append(ENTRIES_SEP_STR);
 				 entriesStr.append(tasBean.get_05number());
 				 entriesStr.append(ENTRIES_SEP_STR);
-				 entriesStr.append(tasBean.get_11version());
-				 entriesStr.append(ENTRIES_SEP_STR);
 				 entriesStr.append(tasBean.get_07view());
+				 entriesStr.append(ENTRIES_SEP_STR);
+				 entriesStr.append(tasBean.get_11version());
+				
 				 
 				 String[] entries = entriesStr.toString().split(ENTRIES_SEP_STR);
 				 
