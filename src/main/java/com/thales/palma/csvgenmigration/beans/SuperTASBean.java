@@ -69,10 +69,17 @@ public class SuperTASBean {
 	String _48startEffectivityDate = null;
 	
 	
+	String _90releasedOn = null;
 	
 	String _95lifeCycleState = null;
 
-	String _90releasedOn = null;
+	String 	_96creator = null;
+	
+	String 	_97modifier = null;
+	
+	String 	_98createTimestamp = null;
+	
+	String 	_99modifyTimestamp = null;
 	
 	
 	public String getFunctionName() {
@@ -332,6 +339,14 @@ public class SuperTASBean {
 		this._48startEffectivityDate = _48startEffectivityDate;
 	}
 	
+	public String get_90releasedOn() {
+		return _90releasedOn;
+	}
+
+	public void set_90releasedOn(String _90releasedOn) {
+		this._90releasedOn = _90releasedOn;
+	}		
+	
 	public String get_95lifeCycleState() {
 		return _95lifeCycleState;
 	}
@@ -340,12 +355,37 @@ public class SuperTASBean {
 		this._95lifeCycleState = _95lifeCycleState;
 	}
 
-	public String get_90releasedOn() {
-		return _90releasedOn;
+	public String get_96creator() {
+		return _96creator;
 	}
 
-	public void set_90releasedOn(String _90releasedOn) {
-		this._90releasedOn = _90releasedOn;
-	}	
+	public void set_96creator(String _96creator) {
+		this._96creator = _96creator;
+	}
+
+	public String get_97modifier() {
+		return _97modifier;
+	}
+
+	public void set_97modifier(String _97modifier) {
+		this._97modifier = _97modifier;
+	}
+
+	public String get_98createTimestamp() {
+		return _98createTimestamp;
+	}
+
+	public void set_98createTimestamp(String _98createTimestamp) {
+		this._98createTimestamp = _98createTimestamp;
+	}
+
+	public String get_99modifyTimestamp() {
+		return _99modifyTimestamp;
+	}
+
+	public void set_99modifyTimestamp(String _99modifyTimestamp) {
+		this._99modifyTimestamp = _99modifyTimestamp;
+	}
+
 	
 }

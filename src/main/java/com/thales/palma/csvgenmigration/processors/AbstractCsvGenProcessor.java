@@ -222,7 +222,9 @@ public abstract class AbstractCsvGenProcessor implements CsvGenProcessor {
 	  							"_36isPhantom", "_37LBODate",
 	  							"_38localPPLStatus", "_40functionalStatus",
 	  							"_41baseTrackingIdentifier", "_42itemType", "_48startEffectivityDate", 
-	  							"_49spareable", "_90releasedOn", "_95lifeCycleState"};
+	  							"_49spareable", "_90releasedOn", "_95lifeCycleState",
+	  							"_96creator", "_97modifier", "_98createTimestamp",
+	  							"_99modifyTimestamp", "_900qualityDef", "_907model", "_908pdmPart"};
 	
 	     
 		mappingStrategy.setColumnMapping(columns);

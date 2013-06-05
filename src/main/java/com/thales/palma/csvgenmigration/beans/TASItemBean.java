@@ -26,6 +26,14 @@ public class TASItemBean extends SuperTASBean {
 	
 	String _49spareable = null;
 	
+	
+	String 	_900qualityDef = null;
+	
+	String 	_907model = null;
+	
+	String 	_908pdmPart = null;
+	
+	
 	public String get_14endItem() {
 		return _14endItem;
 	}
@@ -122,12 +130,28 @@ public class TASItemBean extends SuperTASBean {
 		this._49spareable = _49spareable;
 	}
 
-	public String get_90releasedOn() {
-		return _90releasedOn;
+	public String get_900qualityDef() {
+		return _900qualityDef;
 	}
 
-	public void set_90releasedOn(String _90releasedOn) {
-		this._90releasedOn = _90releasedOn;
+	public void set_900qualityDef(String _900qualityDef) {
+		this._900qualityDef = _900qualityDef;
+	}
+
+	public String get_907model() {
+		return _907model;
+	}
+
+	public void set_907model(String _907model) {
+		this._907model = _907model;
+	}
+
+	public String get_908pdmPart() {
+		return _908pdmPart;
+	}
+
+	public void set_908pdmPart(String _908pdmPart) {
+		this._908pdmPart = _908pdmPart;
 	}
 	
 	
