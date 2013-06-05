@@ -245,9 +245,10 @@ public abstract class AbstractCsvGenProcessor implements CsvGenProcessor {
 		 entriesStr.append(ENTRIES_SEP_STR);
 		 entriesStr.append("05number");
 		 entriesStr.append(ENTRIES_SEP_STR);
-		 entriesStr.append("11version");
-		 entriesStr.append(ENTRIES_SEP_STR);
 		 entriesStr.append("07view");
+		 entriesStr.append(ENTRIES_SEP_STR);
+		 entriesStr.append("11version");
+		 
 		 
 		return entriesStr.toString();
 		
