@@ -79,11 +79,16 @@ public abstract class AbstractCsvGenProcessor implements CsvGenProcessor {
 			 
 			 DateFormat dateFormat = new SimpleDateFormat(getProperties().getProperty("csv_gen_migration.action.csvdateformat"));
 			 
-			 File csvOutputFile = new File( outDir.getCanonicalPath()
-						+ File.separator + dateFormat.format(cal.getTime())
-						+ getContext().get(Context.CSV_OUTPUT_FILE_SUFFIX_KEY) 
-						+ CSV_FILE_EXT );
-			
+			 
+			 StringBuilder outputFilePathName = new StringBuilder(outDir.getCanonicalPath());
+			 outputFilePathName.append(File.separator);
+			 outputFilePathName.append(dateFormat.format(cal.getTime()));
+			 outputFilePathName.append("-");
+			 outputFilePathName.append(getContext().get(Context.CSV_OUTPUT_FILE_CORE_KEY));
+			 outputFilePathName.append(getContext().get(Context.CSV_OUTPUT_FILE_SUFFIX_KEY));
+			 outputFilePathName.append(CSV_FILE_EXT);
+			 
+			 File csvOutputFile = new File(outputFilePathName.toString());
 			 
 			 
 			loadActionWriter = new CSVWriter( new FileWriter(csvOutputFile),

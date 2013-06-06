@@ -218,6 +218,7 @@ public class CsvGenMigrationAction {
 			
 			context.set(Context.CSV_INPUT_FILES_KEY,csvFiles);
 			context.set(Context.CSV_ACTION_KEY,csvGenAction);
+			context.set(Context.CSV_OUTPUT_FILE_CORE_KEY,csvsInputDir.getName());
 			context.set(Context.CSV_OUTPUT_FILE_SUFFIX_KEY,outCsvSuffix);
 			context.set(Context.CSV_OUTPUT_DIR_KEY, csvsOutputDir);
 			
