@@ -24,7 +24,7 @@ public class TASPartQualityDefinitionProcessor extends AbstractCsvGenProcessor {
 		
 		List<? extends SuperTASBean> tasBeanList = null;
 		
-		 CSVReader reader = new CSVReader(new FileReader(csvFile), '|', '\"', 1);
+		 CSVReader reader = new CSVReader(new FileReader(csvFile), '|', '\\', 1);
 		 
 		 
 		 if(StringUtils.contains(csvFile.getName(), prtPatternStr)) {

@@ -16,6 +16,7 @@ import com.thales.palma.csvgenmigration.beans.SuperTASBean;
 public class TASPartConfProcessor extends AbstractCsvGenProcessor {
 
 	
+	private static final String UNTRACED_CODE = "0";
 	private static final String RELEASED_STATE = "RELEASED";
 
 	@Override
@@ -25,7 +26,7 @@ public class TASPartConfProcessor extends AbstractCsvGenProcessor {
 		
 		 List<? extends SuperTASBean> tasBeanList = null;
 		
-		 CSVReader reader = new CSVReader(new FileReader(csvFile), '|', '\"', 1);
+		 CSVReader reader = new CSVReader(new FileReader(csvFile), '|', '\\', 1);
 		 
 		 if(StringUtils.contains(csvFile.getName(), _3ePatternStr)
 				 || StringUtils.contains(csvFile.getName(), n3ePatternStr)) {
@@ -60,7 +61,8 @@ public class TASPartConfProcessor extends AbstractCsvGenProcessor {
 		/* Proceed with all the lines that match the condition (state RELEASED) */
 		for(SuperTASBean tasBean : tasBeanList) {
 	        
-			 if(RELEASED_STATE.equals( tasBean.get_95lifeCycleState())) {
+			 if( RELEASED_STATE.equals( tasBean.get_95lifeCycleState())
+					 && (StringUtils.isNotBlank(tasBean.get_13defaultTraceCode()) && !UNTRACED_CODE.equals( tasBean.get_13defaultTraceCode()) ) ) {
 				 
 				 StringBuilder entriesStr = new StringBuilder( getCsvLoadAction() );
 				 entriesStr.append(ENTRIES_SEP_STR);
