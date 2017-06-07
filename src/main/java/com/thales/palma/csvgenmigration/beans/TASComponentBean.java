@@ -3,6 +3,8 @@ package com.thales.palma.csvgenmigration.beans;
 public class TASComponentBean extends SuperTASBean {
 
 	
+	// TOTO
+	
 	String _46PPLStatus = null;
 	
 	String _59smd = null;
